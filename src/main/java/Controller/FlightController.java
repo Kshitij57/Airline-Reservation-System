@@ -1,5 +1,7 @@
 package Controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -22,12 +24,14 @@ public class FlightController {
 	public String getAvailableSeat(@RequestBody Flight flight) {
 		return null;
 	}
-	public ResponseEntity<Flight> getSeatPrice(@RequestBody Integer price) {
-		Flight flight = flightservice.getSeatPrice(price);
+	@GetMapping("/getseatprice")
+	public ResponseEntity<List> getSeatPrice(@RequestBody Integer price) {
+		List flight = flightservice.getSeatPrice(price);
 		return  ResponseEntity.ok(flight);
 	}
-	public ResponseEntity<Flight> getSeatno(@PathVariable("id")Integer id){
-		Flight flight = flightservice.getSeatno(id);
+	@GetMapping("/getseatno")
+	public ResponseEntity<List> getSeatno(@PathVariable("id")Integer id){
+		List flight = flightservice.getSeatno(id);
 		return ResponseEntity.ok(flight);
 	}
 	//public class ResponseEntity<Flight>

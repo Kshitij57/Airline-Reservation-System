@@ -1,31 +1,37 @@
 package Service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import Entity.Flight;
+import Repository.FlightRepository;
 
 @Service
 public class flightServiceImpl implements FlightService {
 @Autowired
-private FlightService flightservice;
+private FlightRepository flighrepository;
 
 @Override
-public String getAvailableSeat(Flight flight) {
+public List getAvailableSeat(Flight flight) {
 	// TODO Auto-generated method stub
-	return null;
-}
-
-@Override
-public Flight getSeatPrice(Integer price) {
-	// TODO Auto-generated method stub
-	return null;
+	return flighrepository.findAll();
 }
 
 @Override
-public Flight getSeatno(Integer flight) {
+public List getSeatPrice(Integer price) {
 	// TODO Auto-generated method stub
-	return null;
+	return flighrepository.findAll();
+}
+
+@Override
+public List getSeatno(Integer flight) {
+	// TODO Auto-generated method stub
+	return flighrepository.findAll();
+}
+
+
 }
 
 
@@ -33,4 +39,4 @@ public Flight getSeatno(Integer flight) {
 
 
 
-}
+
