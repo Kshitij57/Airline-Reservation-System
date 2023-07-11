@@ -9,6 +9,6 @@ public interface UserRepository extends JpaRepository<Integer , User> {
 
 	User save(User user);
 
-	User findAllById(User user);
+	User findAllById(int id);
 
 }

@@ -2,6 +2,9 @@ package Controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -15,15 +18,18 @@ public class UserController {
 	@Autowired
 	private UserService userservice;
 
+	@PostMapping("/saveuser")
 	public User saveUser(User user) {
 		return userservice.saveUser(user);
 	}
 
+	@GetMapping("/getuser")
 	public ResponseEntity<User>  getUserbyId(int id) {
 		User user = userservice.getUserbyId(id);
 		return ResponseEntity.ok().body(user);
 	}
 
+	@PutMapping("/putuser")
 	public User setUsers(User user) {
 		return userservice.setUsers(user);
 	}
