@@ -6,9 +6,10 @@ import Entity.Flight;
 
 public interface FlightService {
 
-    public List getAvailableSeat(Flight flight);
-	public List getSeatPrice(Integer price);
-	public List getSeatno(Integer flight);
-	
+	public Iterable <Flight> getAllFlight();
+    public Flight getAvailableSeat(Flight flight);
+	public Flight getSeatPrice(Integer price);
+	public Flight getSeatno(Integer number);
+	public Flight deleteSeat(Integer number);
 	
 }
