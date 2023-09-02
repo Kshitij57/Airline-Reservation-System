@@ -20,23 +20,24 @@ public class FlightController {
 	@Autowired
 	private FlightService flightservice;
 	
-	@GetMapping("/getseat")
-	public String getAvailableSeat(@RequestBody Flight flight) {
-		return null;
-	}
+	
 	@GetMapping("/getseatprice")
-	public ResponseEntity<List> getSeatPrice(@RequestBody Integer price) {
-		List flight = flightservice.getSeatPrice(price);
-		return  ResponseEntity.ok(flight);
+	public ResponseEntity<Integer> getSeatPrice(@RequestBody Integer price) {
+		Flight flight = flightservice.getSeatPrice(price);
+		
+		return ResponseEntity.ok(price);
+	
 	}
 	@GetMapping("/getseatno")
-	public ResponseEntity<List> getSeatno(@PathVariable("id")Integer id){
-		List flight = flightservice.getSeatno(id);
-		return ResponseEntity.ok(flight);
+	public ResponseEntity<Flight> getSeatno(@RequestBody Integer number){
+		Flight flight = flightservice.getSeatno(number);
+		return ResponseEntity.ok(flightservice.getSeatno(number));
 	}
 	//public class ResponseEntity<Flight>
 
-		public static ResponseEntity<Entity.Flight> ok(Entity.Flight flight) {
+	
+	
+	public static ResponseEntity<Entity.Flight> ok(Entity.Flight flight) {
 			// TODO Auto-generated method stub
 			return null;
 		}

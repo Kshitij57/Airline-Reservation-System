@@ -26,8 +26,8 @@ public class userserviiceimpl implements UserService{
 	@Override
 	public User getUserbyId(int id) {
 		// TODO Auto-generated method stub
-		User user2= userrepository.findAllById(id);
-		return user2;
+		User user= userrepository.findAllById(id);
+		return user;
 	}
 
 	@Override
@@ -36,8 +36,18 @@ public class userserviiceimpl implements UserService{
 		User user1 = userrepository.save(user);
 		return user1;
 	}
-	
-	
+
+	@Override
+	public User getUserbyId(Integer id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public User deleteUser(Integer id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 	
 	}
 	

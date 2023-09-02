@@ -2,6 +2,7 @@ package Controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
@@ -19,20 +20,29 @@ public class UserController {
 	private UserService userservice;
 
 	@PostMapping("/saveuser")
-	public User saveUser(User user) {
-		return userservice.saveUser(user);
-	}
+	public ResponseEntity <User>saveUser (User user)throws Exception {
+		return ResponseEntity.ok(userservice.saveUser(user));
+		
+				}
 
 	@GetMapping("/getuser")
 	public ResponseEntity<User>  getUserbyId(int id) {
 		User user = userservice.getUserbyId(id);
-		return ResponseEntity.ok().body(user);
+		return ResponseEntity.ok(userservice.getUserbyId(id)); 
 	}
 
 	@PutMapping("/putuser")
-	public User setUsers(User user) {
-		return userservice.setUsers(user);
+	public ResponseEntity <User> setUsers(User user)  throws Exception{
+		return ResponseEntity.ok(userservice.setUsers(user));
 	}
 	
+	@DeleteMapping("/deletemapping")
+	public ResponseEntity<User> deleteUserById(Integer id ) {
+		User user = userservice.deleteUserById(id);
+		return ResponseEntity.ok(userservice.deleteUserById(id));
+     
+	}
 	
-}
+		
+	}
+
