@@ -14,22 +14,42 @@ public class flightServiceImpl implements FlightService {
 private FlightRepository flighrepository;
 
 @Override
-public List getAvailableSeat(Flight flight) {
+public Iterable<Flight> getAllFlight() {
 	// TODO Auto-generated method stub
-	return flighrepository.findAll();
+	return null;
 }
 
 @Override
-public List getSeatPrice(Integer price) {
+public Flight getAvailableSeat(Flight seat) {
 	// TODO Auto-generated method stub
-	return flighrepository.findAll();
+	return null;
 }
 
 @Override
-public List getSeatno(Integer flight) {
+public Flight getSeatPrice(Integer price) {
 	// TODO Auto-generated method stub
-	return flighrepository.findAll();
+	return null;
 }
+
+@Override
+public Flight getSeatno(Integer number) {
+	// TODO Auto-generated method stub
+	return null;
+}
+
+@Override
+public Flight bookticket(Flight book) {
+	// TODO Auto-generated method stub
+	return null;
+}
+
+@Override
+public Flight deleteticket(Integer ticket) {
+	// TODO Auto-generated method stub
+	return null;
+}
+
+
 
 
 }

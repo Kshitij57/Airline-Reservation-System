@@ -13,7 +13,7 @@ public class Adminserviceimpl implements AdminService {
 	@Override
 	public User deleteUserbyId(int id) {
 		// TODO Auto-generated method stub
-		return null;
+		return adminrepository.delete(id);
 	}
 
 	@Override
